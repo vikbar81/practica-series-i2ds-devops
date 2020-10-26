@@ -1,0 +1,43 @@
+
+#PUNTO 1: CREACIÓN DEL REPOSITORIO
+mkdir practica-series-i2ds-devops
+cd practica-series-i2ds-devops
+git init
+ls -lash
+
+git remote add origin https://github.com/vikbar81/practica-series-i2ds-devops.git #configuración del repositorio de origen
+
+
+#PUNTO 2: CREACIÓN DEL BRANCH DEVELOPMENT
+git branch #branch actual
+git checkout -b "development" #se crea el branch de nombre "development"
+
+#PUNTO 3-4-5-6: PRIMER COMMIT
+vi README.md #ser crea archivo y se agrega texto "Instituto Internacional de Ciencia de Datos, [FECHA]"
+
+git add . #se pasa todo al "staging"
+git commit -m "Victor Barrera, first commit" #se confirma pasar todo el "staging"
+
+#PUNTO 7: archivo fibonacci.txt
+mkdir series
+cd series
+touch fibonacci.txt
+vi fibonacci.txt #serie: 0,1,1,2,3,5,8,13,21,34,55,89,144,233
+
+git add . #se pasa todo al "staging"
+git commit -m "Agregando /series/fibonacci.txt" #se confirma pasar todo el "staging"
+
+#agregando modificaciones a la serie en fibonacci.txt
+vi fibonacci.txt #modificando la serie: 0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597
+
+git add .
+git commit -m "Extendiendo la serie Fibonacci"
+git push origin development
+
+#agregando números primos en primos.txt
+vi primos.txt #2 3 7 11 13 17 19 23 29 31 33 37 39 41 43 47 53 59 61 67 71 73 79
+
+git add series/primos.txt
+git commit -m "Agregando lista de numéros primos hasta el 79"
+git push origin development
+
